@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live COVID bed availability & Plasma Bank List in West Bengal || Covid-19 Helpdesk by Sounak</title>
+    <link rel="icon" href="./images/coronavirus.svg" sizes="any">
+
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-63REC09GEJ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-63REC09GEJ');
+    </script>
+
+</head>
+
+<body>
+    
+<!-- header section starts  -->
+
+<header>
+
+    <a href="./index.html" class="logo">Project Covid Help</a>
+
+    <div id="menu" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a class="active" href="./hospitalList.html">Hospital</a></li>
+            <li><a href="./oxyzenList.html">Oxygen List</a></li>
+            <li><a href="./otherLink.html">Important Links</a></li>
+        </ul>
+    </nav>
+
+</header>
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content">
+
+        <span>Project Covid Help</span>
+        <h3>Stay Safe, Wear Mask</h3>
+        <p>Loved the movie Five Feet Apart? Well, let's stay 6 Feet Apart in real life.<br>Hospital lists are from WB Department of Health & Family Welfare</p>
+        <a href="https://excise.wb.gov.in/CHMS/Public/Page/CHMS_Public_Hospital_Bed_Availability.aspx" target="_blank" class="btn" style="background-color: red;">Live COVID bed availability</a>
+        <br>
+
+    </div>
+
+    <div class="image">
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_vPnn3K.json"  background="transparent"  speed="1"  style="height: 300px;"  loop  autoplay></lottie-player>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+
+<h1 class="heading2">List of <span>Plasma Banks</span> in West Bengal for COVID 19<br><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7Qh3SB1oKl5PhpIYZ_XdbNU6cMSOLGflg4QjQv_oNp68TWuprz3eUPkEpsA3JCYVlyqGXtRT4b8R8/pub?output=pdf" class="btn">Download PDF</a></h1>
+        <table class="new-table">
+            <thead>
+            <tr>
+                <th>Sl No</th>
+                <th>District</th>
+                <th>Name</th>
+                <th>Phone Number</th>
+            </tr>
+            </thead>
+            <tbody id="demo"></tbody>
+        </table>
+
+    <!-- footer section starts  -->
+    <section class="footer" id="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>About Us</h3>
+                <p>Hola, I'm Sounak the human behind this project.<br><br> In last few days I have noticed a lot of help posts on my social media and felt that, the programming skills I've gained in last few years, if I don't use them now those skills are useless. Hope this site will help you </p>
+            </div>
+
+
+            <div class="box">
+                <h3>Important links</h3>
+                <a href="./index.html">Home</a>
+                <a href="./index.html">Protect</a>
+                <a href="https://www.wbhealth.gov.in/" target="_blank">WB Govt Health</a>
+                <a href="https://forms.gle/rDMqghCpcwJTWYCu7" target="_blank">Donate Plasma</a>
+            </div>
+
+            <div class="box">
+                <h3>contact info</h3>
+                <p> <i class="fas fa-envelope"></i> <a href="mailto:someone@example.com">info@sounak.in </a> </p>
+                <p> <i class="fas fa-map-marker-alt"></i> Kolkata </p>
+                <div class="share">
+                    <a href="#" class="fab fa-youtube"></a>
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div>
+            </div>
+        </div>
+        <h1 class="credit"> Created with love by <a href="https://sounak.in/">Sounak</a> </h1>
+    </section>
+    <!-- footer section ends -->
+
+
+    <script type="text/javascript">
+
+        let xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let data = JSON.parse(this.responseText).feed.entry;
+
+            let i;
+            for (i = 0; i < data.length; i++) {
+            let Sl_No = data[i]["gsx$sl"]["$t"];
+            let District = data[i]["gsx$district"]["$t"];
+            let Name = data[i]["gsx$nameoftheplasmabank"]["$t"];
+            let Phone_Number = data[i]["gsx$phonenumber"]["$t"];
+
+            document.getElementById("demo").innerHTML +=
+                "<tr>" +
+                "<td>" +
+                Sl_No +
+                "</td>" +
+                "<td>" +
+                District +
+                "</td>" +
+                "<td>" +
+                Name +
+                "</td>" +
+                "<td>"+
+                Phone_Number+
+                "</td>"+
+                "</tr>";
+            }
+        }
+        };
+
+        xmlhttp.open(
+        "GET",
+        "https://spreadsheets.google.com/feeds/list/1HHzz5uIeZ6uRjCCn2R8iUtbqhKP3XBZ1r_QgddSLU_s/1/public/values?alt=json",
+        true
+        );
+        xmlhttp.send();
+    </script>
+
+    <!-- jquery cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="script.js"></script>
+
+</body>
+</html>

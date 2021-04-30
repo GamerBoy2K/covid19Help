@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plasma Donation System || Covid-19 Helpdesk by Sounak</title>
+    <link rel="icon" href="./images/coronavirus.svg" sizes="any">
+
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-63REC09GEJ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-63REC09GEJ');
+    </script>
+
+</head>
+
+<body>
+    
+<!-- header section starts  -->
+
+<header>
+
+    <a href="./index.html" class="logo">Project Covid Help</a>
+
+    <div id="menu" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./hospitalList.html">Hospital</a></li>
+            <li><a href="./oxyzenList.html">Oxygen List</a></li>
+            <li><a href="./otherLink.html">Important Links</a></li>
+        </ul>
+    </nav>
+
+</header>
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content">
+
+        <span>Project Covid Help</span>
+        <h3>Donate Plasma, Save a Life</h3>
+        <p>Plasma donation costs You nothing, but it can mean the world to someone in need.<br>Get Plasma - Donate Plasma</p>
+        <a href="https://forms.gle/VLugMefNvAPyZJzL7" class="btn">Donate Plasma</a>
+        <a href="https://forms.gle/S9SY7vt45ucdEcQQ8" class="btn">Request Plasma</a>
+
+    </div>
+
+    <div class="image">
+        <img src="images/undraw_medical_research_qg4d.svg" alt="">
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+
+<h1 class="heading2">List of <span>Plasma Donee</span> who need <span>Plasma</span> <br> <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQD-3LlHla5c4_EWlH78lltBLgFMF00J3H74gJVwEtUdKmUwTQHnwOkIqWZnkpWdEcBYC1CgmsF2wA_/pub?output=pdf" class="btn">Download PDF</a></h1>
+        <table class="new-table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Blood Group</th>
+                <th>City/District</th>
+                <th>Admitted Hospital Name</th>
+                <th>Admission Date</th>
+                <th>Date of Birth</th>
+            </tr>
+            </thead>
+            <tbody id="plasmaDonee"></tbody>
+        </table>
+
+        <br><br><br><br><br><br>
+        <h1 class="heading2">List of <span>Plasma Donor</span> who want to Donate <span>Plasma</span> <br> <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQuQLPFekRuxAwTFgQ7mDSbnauRlCjgreX_ezQm-Vjca8-7ihXtCorpg6REzHSBFGpqcPka-QoYWdVs/pub?output=pdf" class="btn">Download PDF</a></h1>
+        <table class="new-table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Blood Group</th>
+                <th>City/District</th>
+                <th>CoVID Test Date</th>
+                <th>Date of Birth</th>
+            </tr>
+            </thead>
+            <tbody id="plasmaDonor"></tbody>
+        </table>
+
+        
+    <!-- footer section starts  -->
+    <section class="footer" id="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>About Us</h3>
+                <p>Hola, I'm Sounak the human behind this project.<br><br> In last few days I have noticed a lot of help posts on my social media and felt that, the programming skills I've gained in last few years, if I don't use them now those skills are useless. Hope this site will help you </p>
+            </div>
+
+
+            <div class="box">
+                <h3>Important links</h3>
+                <a href="./index.html">Home</a>
+                <a href="./index.html">Protect</a>
+                <a href="https://www.wbhealth.gov.in/" target="_blank">WB Govt Health</a>
+                <a href="https://forms.gle/rDMqghCpcwJTWYCu7" target="_blank">Donate Plasma</a>
+            </div>
+
+            <div class="box">
+                <h3>contact info</h3>
+                <p> <i class="fas fa-envelope"></i> <a href="mailto:someone@example.com">info@sounak.in </a> </p>
+                <p> <i class="fas fa-map-marker-alt"></i> Kolkata </p>
+                <div class="share">
+                    <a href="#" class="fab fa-youtube"></a>
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div>
+            </div>
+        </div>
+        <h1 class="credit"> Created with love by <a href="https://sounak.in/">Sounak</a> </h1>
+    </section>
+    <!-- footer section ends -->
+
+    <script type="text/javascript">
+
+        let xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let data = JSON.parse(this.responseText).feed.entry;
+
+            let i;
+            for (i = 0; i < data.length; i++) {
+            let Name = data[i]["gsx$fullname"]["$t"];
+            let DOB = data[i]["gsx$dateofbirth"]["$t"];
+            let Blood_Group = data[i]["gsx$bloodgroup"]["$t"];
+            let District = data[i]["gsx$citydistrict"]["$t"];
+            let Hospital_Name = data[i]["gsx$admittedhospitalname"]["$t"];
+            let Admission_Date = data[i]["gsx$admissiondate"]["$t"];
+            let Phone_Number = data[i]["gsx$contactnumber"]["$t"];
+
+            document.getElementById("plasmaDonee").innerHTML +=
+                "<tr>" +
+                "<td>" +
+                    Name +
+                "</td>" +
+                "<td>" +
+                    Phone_Number +
+                "</td>" +
+                "<td>" +
+                    Blood_Group +
+                "</td>" +
+                "<td>" +
+                    District +
+                "</td>" +
+                "<td>" +
+                    Hospital_Name +
+                "</td>" +
+                "<td>" +
+                    Admission_Date +
+                "</td>" +
+                "<td>"+
+                    DOB+
+                "</td>"+
+                "</tr>";
+            }
+        }
+        };
+
+        xmlhttp.open(
+        "GET",
+        "https://spreadsheets.google.com/feeds/list/1WvRSZvjYDqlM0aPPh0EtlznOqU2hnlwfU3SFT3xz4X4/1/public/values?alt=json",
+        true
+        );
+        xmlhttp.send();
+    </script>
+
+
+<script type="text/javascript">
+
+    let xmlhttp2 = new XMLHttpRequest();
+    xmlhttp2.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+        let data = JSON.parse(this.responseText).feed.entry;
+
+        let i;
+        for (i = 0; i < data.length; i++) {
+        let Name = data[i]["gsx$fullname"]["$t"];
+        let DOB = data[i]["gsx$dateofbirth"]["$t"];
+        let Blood_Group = data[i]["gsx$bloodgroup"]["$t"];
+        let District = data[i]["gsx$citydistrict"]["$t"];
+        let CoVID_test_date = data[i]["gsx$dateofcovidtest"]["$t"];
+        let Phone_Number = data[i]["gsx$contactnumber"]["$t"];
+
+        document.getElementById("plasmaDonor").innerHTML +=
+            "<tr>" +
+            "<td>" +
+                Name +
+            "</td>" +
+            "<td>" +
+                Phone_Number +
+            "</td>" +
+            "<td>" +
+                Blood_Group +
+            "</td>" +
+            "<td>" +
+                District +
+            "</td>" +
+            "<td>" +
+                CoVID_test_date +
+            "</td>" +
+            "<td>"+
+                DOB+
+            "</td>"+
+            "</tr>";
+        }
+    }
+    };
+
+    xmlhttp2.open(
+    "GET",
+    "https://spreadsheets.google.com/feeds/list/1ZYflESdD5iWe8WCCk23uO_SMPMNfMndfW7FaT14fbpA/1/public/values?alt=json",
+    true
+    );
+    xmlhttp2.send();
+</script>
+
+<!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="script.js"></script>
+
+</body>
+</html>
